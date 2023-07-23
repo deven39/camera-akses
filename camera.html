@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>web sangat asik</title>
+        </head>
+    <body>
+    <video id="preview"></video>
+<script>
+    const preview = document.getElementById('preview');
+
+    navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: {
+            width: 400,
+            height: 400
+        }
+    })
+    .then(stream => {
+        preview.srcObject = stream;
+        preview.play();
+     })
+     .catch(error => {
+        console.error(error);
+     })
+     </script>
+</body>
+</html>
+
+
+    
